@@ -1,0 +1,31 @@
+.form {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 200px;
+  text-align: center;
+
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+main{
+  max-width: 660px;
+  background-color: white;
+  margin: 0 auto
+}
+
+
+.btn-sign-in{
+  background-color: black;
+  color: white;
+  padding: 0 80px;
+}
+
+.container-icon{
+ padding: 10px;
+}
+
