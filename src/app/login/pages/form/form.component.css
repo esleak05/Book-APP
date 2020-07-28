@@ -1,3 +1,9 @@
+main{
+  max-width: 400px;
+  background-color: white;
+  margin: 0 auto
+}
+
 .form {
   width: 100%;
   border: 1px solid black;
@@ -6,26 +12,28 @@
   margin-top: 200px;
   text-align: center;
 
+
 }
 
-.example-full-width {
-  width: 100%;
+.container-form {
+  width: 50%;
+  margin: 0 auto;
 }
+.container-form > .mat-form-field{
+  display: block;
 
-main{
-  max-width: 660px;
-  background-color: white;
-  margin: 0 auto
-}
-
-
-.btn-sign-in{
-  background-color: black;
-  color: white;
-  padding: 0 80px;
 }
 
 .container-icon{
- padding: 10px;
+  padding: 10px;
+ }
+
+.btn {
+  padding: 0 80px;
 }
+.btn-sign-in{
+  background-color: black;
+  color: white;
+}
+
 

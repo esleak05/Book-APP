@@ -1,0 +1,29 @@
+.sections{
+  max-width: 1080px;
+  display: flex;
+  flex-flow: row;
+  margin: 80px auto;
+  border: 1px solid black;
+
+}
+
+.section-filter{
+  width: 25%;
+  border: 1px solid red;
+}
+
+.section-books{
+  width: 75%;
+  border: 1px solid purple;
+}
+/* .box-filter{
+  width: 25%;
+  border: 1px solid red;
+
+}
+
+.box-books{
+  width: 75%;
+  border: 1px solid purple;
+} */
+

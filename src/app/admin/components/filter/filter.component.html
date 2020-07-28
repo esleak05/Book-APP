@@ -1,0 +1,13 @@
+<h2>Filtros</h2>
+<div class="container-filter-options">
+  <mat-form-field appearance="fill">
+    <mat-label>Filtros</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let filter of filters" [value]="filter.id">{{filter.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="container-buttons">
+    <button type="submit" mat-button class="btn-buscar btn">Buscar</button>
+  </div>
+</div>
+

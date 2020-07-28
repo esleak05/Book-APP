@@ -1,0 +1,26 @@
+.container-filter-options{
+  border: 1px solid blue;
+  width: 100%;
+
+}
+
+h2{
+  text-align: center;
+}
+
+.mat-form-field{
+  display: block;
+}
+
+.btn {
+  padding: 0 80px;
+}
+.btn-buscar{
+  background-color: black;
+  color: white;
+  margin: 20px 0;
+}
+
+.container-buttons{
+  text-align: center;
+}

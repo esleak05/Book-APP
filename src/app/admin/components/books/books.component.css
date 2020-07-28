@@ -1,0 +1,22 @@
+.container-cards{
+  display: flex;
+  flex-flow: row  wrap;
+  justify-content: space-around;
+
+}
+.example-card{
+  border: 1px solid brown;
+  width: 25%;
+  margin: 10px;
+}
+
+.container-actions{
+  text-align: center;
+  border-top: 1px solid black;
+}
+/* .example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+
+} */
+
