@@ -1,1 +1,30 @@
-<p>footer works!</p>
+<footer>
+
+  <div class="container-footer">
+    <h3>Social Medias</h3>
+    <ul class="container-links">
+
+      <li *ngFor="let icon of icons">
+        <a href="#">
+          <mat-icon [svgIcon]="icon.name"></mat-icon>
+        </a>
+      </li>
+    </ul>
+    <h3>Terminos y condiciones</h3>
+    <ul class="container-links">
+      <li><a>Terminos y Condiciones</a></li>
+      <li><a>Terminos y Condiciones</a></li>
+      <li><a>Terminos y Condiciones</a></li>
+      <li><a>Terminos y Condiciones</a></li>
+      <li><a>Terminos y Condiciones</a></li>
+    </ul>
+    <h3>Contactanos</h3>
+    <ul class="container-links">
+      <li><a>Contactanos</a></li>
+      <li><a>Contactanos</a></li>
+      <li><a>Contactanos</a></li>
+      <li><a>Contactanos</a></li>
+      <li><a>Contactanos</a></li>
+    </ul>
+  </div>
+</footer>

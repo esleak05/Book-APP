@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IconsService} from '../../../shared/services/icons/icons.service';
+import { Observable } from 'rxjs';
+import { Icon } from 'src/app/shared/interfaces/incons/icon-interface';
 
 @Component({
   selector: 'app-form',
@@ -10,14 +12,16 @@ import {IconsService} from '../../../shared/services/icons/icons.service';
 export class FormComponent implements OnInit {
 
   hide = true;
+  // icons: Icon[];
 
   constructor(
     private iconServices: IconsService
-  ) {}
+  ) {
+
+  }
 
   ngOnInit(): void {
-    this.iconServices.addIcon('google', '../../../../assets/icons8-logo-de-google.svg');
-    this.iconServices.addIcon('github', '../../../../assets/icons8-github.svg');
-    this.iconServices.addIcon('user-login', '../../../../assets/icons8-usuario-masculino.svg')
+    // this.iconServices.getICons().subscribe(icons => this.icons = icons);
+    // this.icons.map(icon=> this.iconServices.addIcon(icon.name, icon.path));
   }
 }

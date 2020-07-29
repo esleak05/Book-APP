@@ -1,0 +1,34 @@
+footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.container-footer{
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.mat-icon{
+  padding: auto 0;
+}
+
+
+.container-links{
+
+  border: 1px solid red;
+  margin-right: 30px;
+  list-style-type: none;
+
+}
+
+
+.container-links > li  a{
+list-style: none;
+}
+
+
