@@ -13,22 +13,22 @@ footer{
 
 }
 
-.mat-icon{
-  padding: auto 0;
+
+.container-terminos-legales,
+.container-social-media,
+.container-contactenos{
+  border: 1px solid orange;
+  margin: 20px;
+
 }
 
 
 .container-links{
 
-  border: 1px solid red;
   margin-right: 30px;
   list-style-type: none;
 
 }
 
-
-.container-links > li  a{
-list-style: none;
-}
 
 

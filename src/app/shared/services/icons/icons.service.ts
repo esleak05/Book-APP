@@ -16,7 +16,7 @@ export class IconsService {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
   ) {}
-  getICons(): Observable<Icon> {
+  getICons(iconsFilter?: string[]): Observable<Icon> {
     return from(ICONS).pipe(
       filter((icon: Icon) =>  icon.name !== 'github'),
       filter((icon: Icon) => icon.name !== 'google')
