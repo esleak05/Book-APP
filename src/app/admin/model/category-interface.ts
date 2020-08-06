@@ -1,5 +1,5 @@
 export interface Category {
-  id: number | string;
+  category_id: number | string;
   name: string;
   niceName: string;
 }

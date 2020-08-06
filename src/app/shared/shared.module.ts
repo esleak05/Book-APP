@@ -11,9 +11,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { StringAlteratePipe } from './pipes/string-alterate.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [StringAlteratePipe],
   imports: [
     CommonModule,
   ],
@@ -28,7 +29,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatTabsModule,
     MatSelectModule,
     MatCardModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    StringAlteratePipe
 
   ]
 })

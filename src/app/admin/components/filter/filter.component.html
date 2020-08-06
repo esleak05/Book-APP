@@ -1,13 +1,15 @@
 <h2>Filtros</h2>
 <div class="container-filter-options">
-  <mat-form-field appearance="fill">
-    <mat-label>Filtros</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let filter of filters" [value]="filter.id">{{filter.name}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <div class="container-buttons">
-    <button type="submit" mat-button class="btn-buscar btn">Buscar</button>
-  </div>
+  <form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Filtros</mat-label>
+      <mat-select name="filter" [(ngModel)]="option" (selectionChange)="displayValue()">
+        <mat-option *ngFor="let category of categories" [value]="category.category_id">{{category.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="container-buttons">
+      <button type="submit" mat-button class="btn-buscar btn">Buscar</button>
+    </div>
+  </form>
 </div>
 

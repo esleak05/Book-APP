@@ -1,25 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import {Filters} from '../../../shared/interfaces/filters/filter-interfaces';
-import { FilterService } from './../../../shared/services/filters/filter.service';
-
+import { ShareDataService } from './../../services/shareData/share-data.service';
+import { filter } from 'rxjs/operators';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { stringify } from 'querystring';
+import { MatSelect } from '@angular/material/select';
+import { CategoryService } from './../../services/category/category.service';
+import { Category } from './../../model/category-interface';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.css']
+  styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent implements OnInit {
-
-  filters: Filters[];
+  // @Output() selection = new EventEmitter<number>();
+  option: number;
+  @ViewChild('form1') filterForm: NgForm;
+  categories: Category[];
 
   constructor(
-    private filterService: FilterService,
-  ) { }
+    private categoryServices: CategoryService,
+    private shareDataService: ShareDataService
+  ) {}
 
   ngOnInit(): void {
-   this.filterService.
-        getFilters().
-        subscribe(filters => this.filters = filters);
+    this.categoryServices
+      .getCategories()
+      .subscribe((categories: Category[]) => (this.categories = categories));
   }
 
+  displayValue(data?: any): void {
+    console.log('Desplegando valor desde filter componeent');
+  }
+
+
+
+  onSubmit(form: NgForm): void {
+    console.log('Enviando data.....');
+    console.log(form.value.filter);
+    console.log(`option: ${this.option}`);
+    this.shareDataService.sendCategoryId(this.option);
+    // this.bookService.getBooks().subscribe(this.bookService);
+  }
 }

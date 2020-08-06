@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.iconServices.getICons().subscribe((icon: Icon) => {
-      console.log(`agregando ${icon.name}`);
+
       this.iconServices.addIcon(icon.name, icon.path);
       this.icons.push(icon);
       // this.icons.map((icon: Icon) => this.iconServices.addIcon(icon.name, icon.path));

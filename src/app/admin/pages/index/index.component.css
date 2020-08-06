@@ -1,8 +1,9 @@
 .sections{
-  max-width: 1080px;
+  /* max-width: 1080px; */
+
   display: flex;
   flex-flow: row;
-  margin: 80px auto;
+  margin: 80px;
   border: 1px solid black;
 
 }
