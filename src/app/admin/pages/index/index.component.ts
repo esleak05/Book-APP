@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  categoryId: number;
+  // categoryId: number;
 
   constructor(
   ) { }
@@ -16,8 +16,8 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendCategoryId(categoryId: number): void{
-    console.log(`from index component ${categoryId}`);
-    this.categoryId = categoryId;
-  }
+  // sendCategoryId(categoryId: number): void{
+  //   console.log(`from index component ${categoryId}`);
+  //   this.categoryId = categoryId;
+  // }
 }

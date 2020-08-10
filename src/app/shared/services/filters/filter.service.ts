@@ -11,7 +11,6 @@ export class FilterService {
   constructor() { }
 
   getFilters(): Observable<Filters[]>{
-    console.log(`Filters Services`);
     return of(FILTERS);
   }
 }

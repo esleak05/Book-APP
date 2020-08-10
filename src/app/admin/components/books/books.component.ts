@@ -1,9 +1,12 @@
 import { ShareDataService } from './../../services/shareData/share-data.service';
 import { Book } from './../../model/book-interface';
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import { BookService } from './../../services/book/book.service';
-import { take } from 'rxjs/operators';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-books',
@@ -11,36 +14,47 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./books.component.css'],
 })
 export class BooksComponent implements OnInit, OnDestroy {
-  private subscription: Subscription;
-  books: Book[];
+  private subscriptionCategory: Subscription;
+  private subscriptionNumPages: Subscription;
+  private categoryId: number;
+  private numPages: number;
+  books: Book[] = [];
 
   constructor(
     private bookServices: BookService,
     private shareDataServices: ShareDataService
   ) {
-    this.subscription = this.shareDataServices.information$.subscribe((data) =>
-      this.bookServices
-        .getBooksByCategory(data)
-        .subscribe((books) => (this.books = books))
+    this.subscriptionCategory = this.shareDataServices.categoryId$.subscribe(
+      (categoryId: number) => {
+        this.categoryId = categoryId;
+        this.getBooks();
+      }
+    );
+    this.subscriptionNumPages = this.shareDataServices.numPages$.subscribe(
+      (numPages: number) => {
+        this.numPages = numPages;
+        this.getBooks();
+      }
     );
   }
 
-  ngOnInit(): void {
-    this.bookServices
-      .getBooks()
-      .subscribe((books: Book[]) => (this.books = books));
-  }
-
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     console.log('se está destruyendo el componente');
-    this.subscription.unsubscribe();
+    this.subscriptionCategory.unsubscribe();
+    this.subscriptionNumPages.unsubscribe();
   }
 
-  private IsEmpty(books: Book[]): boolean {
-    console.log(books);
-    return false;
+  private getBooks(): void {
+    if (this.books.length > 0) {
+      this.bookServices
+        .getBooksByCategory(this.categoryId, this.numPages)
+        .subscribe((books: Book[]) => (this.books = books));
+    } else {
+      this.bookServices
+        .getBooks()
+        .subscribe((books: Book[]) => (this.books = books));
+    }
   }
-
-
 }

@@ -1,0 +1,22 @@
+nav{
+  background-color: black;
+  color: white;
+}
+
+.list-sections{
+  display: flex;
+  list-style: none;
+
+}
+
+li.push-item{
+  margin-left: auto;
+}
+
+
+.link{
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding:20px;
+}

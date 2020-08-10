@@ -1,3 +1,4 @@
+import { AdminRoutingModule } from './routes/admin-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -28,6 +29,7 @@ import { StringAlteratePipe } from '../shared/pipes/string-alterate.pipe';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+    AdminRoutingModule
   ],
   exports: [
     NavComponent,

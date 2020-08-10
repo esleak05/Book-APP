@@ -4,14 +4,23 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ShareDataService {
-  private information = new BehaviorSubject<number | string>(0);
+  private categoryId = new BehaviorSubject<number>(0);
+  private numPages = new BehaviorSubject<number>(0);
   constructor() {}
-  information$ = this.information.asObservable();
+  categoryId$ = this.categoryId.asObservable();
+  numPages$ = this.numPages.asObservable();
 
-  sendCategoryId(categoryId: number | string): void{
-    console.log(`from shred componenet`);
-    this.information.next(categoryId);
+  sendCategoryId(categoryId: number): void {
+    if (categoryId) {
+      console.log('emit value categoryId');
+      this.categoryId.next(categoryId);
+    }
   }
 
-
+  sendNumPages(numPages: number): void {
+    if (numPages) {
+      console.log('emit value numPages');
+      this.numPages.next(numPages);
+    }
+  }
 }

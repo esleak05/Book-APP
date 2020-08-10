@@ -1,4 +1,12 @@
-<mat-tab-group>
+<!-- <mat-tab-group>
   <mat-tab label="Inicio"> <app-index></app-index> </mat-tab>
   <mat-tab label="Administrar">Administrar</mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->
+<nav>
+  <ul class="list-sections">
+    <li><a routerLink="/index" class="link">Inicio</a></li>
+    <li><a href="#" class="link">Administración</a></li>
+    <li class="push-item"><a href="#" class="link">Icon Login</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

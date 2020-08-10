@@ -3,14 +3,12 @@ import { Observable, of } from 'rxjs';
 import {tap, catchError} from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Book } from './../../model/book-interface';
-
+import {URL} from '../../../shared/mocks/url/mock-url';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookService {
-  private url =  'https://www.etnassoft.com/api/v1/get/?num_items=9';
-  private urlCategory  = 'https://www.etnassoft.com/api/v1/get/';
   private httpOptions = {
       headers: new HttpHeaders( {'Content-type': 'application/json'})
   };
@@ -18,12 +16,13 @@ export class BookService {
     private httpClientServices: HttpClient
   ) {}
 
-  getBooks(): Observable<Book[]>{
-    return this.httpClientServices.get<Book[]>(this.url, this.httpOptions);
+  getBooks(numItems = 12): Observable<Book[]>{
+    const url = `${URL.path}?num_items=${numItems}`;
+    return this.httpClientServices.get<Book[]>(url, this.httpOptions);
   }
-  getBooksByCategory(categoryId: number | string): Observable<Book[]>{
-    const url = `${this.urlCategory}?category_id=${categoryId}`;
-    console.log(url);
+  getBooksByCategory(categoryId?: number, numItems = 12): Observable<Book[]>{
+    numItems === 0 ? numItems = 12 : numItems;
+    const url = `${URL.path}?category_id=${categoryId}&num_items=${numItems}`;
     return this.httpClientServices.get<Book[]>(url, this.httpOptions).pipe(
       tap(books => console.log(books))
     );
