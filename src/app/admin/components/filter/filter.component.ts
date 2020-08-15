@@ -36,10 +36,7 @@ export class FilterComponent implements OnInit {
 
 
   onSubmit(form: NgForm): void {
-    console.log('Enviando data.....');
-    console.log(form.value.filter);
-    console.log(`option: ${this.option}`);
-    this.shareDataService.sendCategoryId(this.option);
+    this.shareDataService.sendCategoryId(form.value.filter);
     // this.bookService.getBooks().subscribe(this.bookService);
   }
 }

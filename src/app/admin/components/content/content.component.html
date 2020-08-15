@@ -1,0 +1,40 @@
+<div class="container-content" *ngIf="book" >
+    <h1>{{book.title}}</h1>
+    <h2 class="autor">{{book.author}}</h2>
+    <p>
+      <span>
+        <mat-icon class="start-icon">start</mat-icon >
+        <mat-icon class="start-icon">start</mat-icon>
+        <mat-icon class="start-icon">start</mat-icon>
+        <mat-icon class="start-icon">start</mat-icon>
+      </span> Score 8.33 | 3 votes</p>
+    <div class="container-description">
+      <h2>Content</h2>
+      <hr>
+      <p>
+        {{book.content_short}}
+      </p>
+    </div>
+    <div class="container-categories">
+      <h2>Categories</h2>
+      <hr>
+      <div class="categories">
+        <a *ngFor="let category of book.categories"  class="link-category" href="#">{{category.name}}</a>
+        <!-- <a class="link-category" href="#">Categorie 1</a>
+        <a class="link-category" href="#">Categorie 1</a> -->
+      </div>
+    </div>
+    <div class="container-tags">
+      <h2>Tags</h2>
+      <hr>
+      <div class="tags">
+        <a *ngFor="let tag of book.tags"  class="link-tags" href="#">{{tag.name}}</a>
+        <!-- <a class="link-tags" href="#">Tag1</a>
+        <a class="link-tags" href="#">Tag1</a> -->
+      </div>
+    </div>
+      <div class="container-buttons">
+        <button  mat-raised-button color="primary">Add</button>
+        <button  mat-raised-button color="warn">Delete</button>
+      </div>
+    </div>

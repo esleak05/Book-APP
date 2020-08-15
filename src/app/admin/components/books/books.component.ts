@@ -42,8 +42,8 @@ export class BooksComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('se está destruyendo el componente');
-    this.subscriptionCategory.unsubscribe();
-    this.subscriptionNumPages.unsubscribe();
+    // this.subscriptionCategory.unsubscribe();
+    // this.subscriptionNumPages.unsubscribe();
   }
 
   private getBooks(): void {

@@ -1,8 +1,9 @@
 <div class="container-cards">
   <mat-card  *ngFor="let book of books" class="example-card">
-    <img mat-card-image src="{{book.cover}}" alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]="book.cover" alt="Photo of a Shiba Inu">
     <mat-card-actions class="container-actions">
-      <a href="{{book.url_download}}" target="_blank" mat-button>Descarga</a>
+      <a [href]="book.url_download" target="_blank" mat-button>Descarga</a>
+      <a routerLink="/book/{{book.ID}}" mat-button>View</a>
     </mat-card-actions>
   </mat-card>
 </div>

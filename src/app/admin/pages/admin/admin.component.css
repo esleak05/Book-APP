@@ -1,0 +1,15 @@
+.container-admin{
+  display: flex;
+  flex-flow: row;
+  margin:80px;
+}
+
+.section-content{
+  width: 75%;
+
+}
+
+.section-image{
+  width: 25%;
+
+}

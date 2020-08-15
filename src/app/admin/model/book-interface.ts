@@ -2,7 +2,7 @@ import { Category } from './category-interface';
 import { Tag } from './tag-interface';
 
 export interface Book {
-  id: number | string;
+  ID: number | string;
   title: string;
   author: string;
   content: string;

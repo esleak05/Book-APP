@@ -1,0 +1,57 @@
+
+hr{
+  text-decoration-style: dotted ;
+}
+.container-content{
+  margin-left: 10px;
+}
+.container-content>div{
+  margin-bottom: 50px;
+}
+
+.autor{
+  color: blue;
+}
+.container-description{
+
+}
+
+
+.container-categories{
+
+}
+
+
+.link-category,
+.link-tags{
+  display: inline-block;
+  background-color: red;
+  padding: 10px;
+  margin-right: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+
+.container-tags{
+
+}
+
+.container-buttons{
+
+}
+
+.container-buttons{
+  display: flex;
+  flex-flow:  row;
+  justify-content: flex-end;
+}
+
+.container-buttons > button{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.start-icon{
+  background-color: red;
+}
